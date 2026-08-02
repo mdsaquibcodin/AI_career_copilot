@@ -1,10 +1,10 @@
 from sqlalchemy import create_engine
 from sqlalchemy.orm import declarative_base, sessionmaker
+import os
 
-DATABASE_URL = "mysql+pymysql://3SammWfZykitU8h.root:UQxlnrDCQ4yzv8ja@gateway01.ap-southeast-1.prod.aws.tidbcloud.com:4000/test"
 
 engine = create_engine(
-    DATABASE_URL,
+    DATABASE_URL = os.getenv("DATABASE_URL"),
     pool_pre_ping=True,
     connect_args={
         "ssl":{
